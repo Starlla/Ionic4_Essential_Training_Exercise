@@ -8,7 +8,7 @@
 
 <ion-content>
     <ion-card *ngFor = "let activity of (activityList | async)">
-      <ion-img routerLink = "activity-detail" [src] = "activity.cropped"></ion-img>
+      <ion-img [routerLink] = "['activity-detail', activity.id]" [src] = "activity.cropped"></ion-img>
       <ion-card-header>
         <ion-card-title>{{activity.name}}</ion-card-title>
       </ion-card-header>
