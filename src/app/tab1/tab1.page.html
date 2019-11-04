@@ -1,16 +1,39 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <div *ngIf="!activityList">
+        <ion-card>
+            <ion-skeleton-text class = "skeleton-image" animated></ion-skeleton-text>
+            <ion-header>
+                <ion-skeleton-text animated></ion-skeleton-text>
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-header>
+        </ion-card>
+        <ion-card>
+            <ion-skeleton-text class = "skeleton-image" animated></ion-skeleton-text>
+            <ion-header>
+                <ion-skeleton-text animated></ion-skeleton-text>
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-header>
+        </ion-card>
+        <ion-card>
+            <ion-skeleton-text class = "skeleton-image" animated></ion-skeleton-text>
+            <ion-header>
+                <ion-skeleton-text animated></ion-skeleton-text>
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-header>
+        </ion-card>
+    </div>
     <ion-card *ngFor = "let activity of (activityList | async)">
-      <ion-img [routerLink] = "['activity-detail', activity.id]" [src] = "activity.cropped"></ion-img>
-      <ion-card-header>
-        <ion-card-title>{{activity.name}}</ion-card-title>
-      </ion-card-header>
+        <ion-img [routerLink] = "['activity-detail', activity.id]" [src] = "activity.cropped"></ion-img>
+        <ion-card-header>
+            <ion-card-title>{{activity.name}}</ion-card-title>
+        </ion-card-header>
     </ion-card>
 </ion-content>
