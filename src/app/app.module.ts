@@ -13,13 +13,15 @@ import {Camera} from '@ionic-native/camera/ngx';
 import {SocialSharing} from '@ionic-native/social-sharing/ngx';
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [HttpClientModule, AngularFireModule.initializeApp(environment.firebase),
-    BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+    BrowserModule, AngularFireAuthModule,
+    IonicModule.forRoot(), AppRoutingModule],
   providers: [
     Camera,
     SocialSharing,
