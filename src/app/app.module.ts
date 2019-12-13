@@ -10,14 +10,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {Camera} from '@ionic-native/camera/ngx';
+import {SocialSharing} from '@ionic-native/social-sharing/ngx';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [HttpClientModule, BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [HttpClientModule, AngularFireModule.initializeApp(environment.firebase),
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     Camera,
+    SocialSharing,
     StatusBar,
     SplashScreen,
 
